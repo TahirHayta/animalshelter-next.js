@@ -9,8 +9,8 @@ const MyAppBar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Adopt Animals
+        <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        Adopt Animals
         </Typography>
         <AppBarButtons />
       </Toolbar>
