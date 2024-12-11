@@ -1,9 +1,9 @@
-import HeaderTopLeft from "@/components/HeaderTopLeft";
+import MyAppBar from '../components/MyAppBar';
 
 export default function Home() {
   return (
   <>
-    <HeaderTopLeft />
+    <MyAppBar />
   </>
   );
 }
