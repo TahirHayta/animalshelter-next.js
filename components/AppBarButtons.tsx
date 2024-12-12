@@ -1,36 +1,40 @@
 'use client'
-import { Box, Button, IconButton } from '@mui/material'
+import { Box, Button, IconButton, Tooltip } from '@mui/material'
 import React from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import PetsIcon from '@mui/icons-material/Pets';
 import PersonIcon from '@mui/icons-material/Person';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import { useRouter } from 'next/navigation';
 
 const AppBarButtons = () => {
     const [loggedIn, setLoggedIn] = React.useState(false)
+    const [name,setName] = React.useState('')
 
+    const {push} = useRouter()
     // If not logged in yet, login or signup page
     const openAccount = () => {
-        setLoggedIn(true) //TODO
+        push('/open-account') 
     }
-    
     //to open profile page
-    const openprofile =() => {
-        setLoggedIn(false)//TODO
+    const openprofile =(event: React.MouseEvent<HTMLButtonElement>) => {
+        push(`/profile/${name}`)//instead of single quotes, use ``
     }
+
+    
 
 
 
     return (
         <Box>
             {/* different button picture will be used if logged in.*/}
-            {loggedIn ? <IconButton color="inherit" aria-label="profile" onClick={openprofile}><PersonIcon /></IconButton>
-            :<IconButton color="inherit" aria-label="openAccount" onClick={openAccount}> <PermIdentityIcon /></IconButton>}
+            {loggedIn ? <Tooltip title="profile" arrow><IconButton color="inherit" aria-label="profile" onClick={openprofile}><PersonIcon /></IconButton></Tooltip>
+            :<Tooltip title="open an account" arrow><IconButton color="inherit" aria-label="openAccount" onClick={openAccount}> <PermIdentityIcon /></IconButton></Tooltip>}
 
-            <IconButton color="inherit" aria-label="home"> <HomeIcon /></IconButton>
-            <IconButton color="inherit" aria-label="animals"> <PetsIcon /></IconButton>
-            <IconButton color="inherit" aria-label="about"> <InfoIcon /></IconButton>
+            <Tooltip title="home" arrow><IconButton color="inherit" aria-label="home"> <HomeIcon /></IconButton></Tooltip>
+            <Tooltip title="animals" arrow><IconButton color="inherit" aria-label="animals"> <PetsIcon /></IconButton></Tooltip>
+            <Tooltip title="about" arrow><IconButton color="inherit" aria-label="about"> <InfoIcon /></IconButton></Tooltip>
         </Box>
   )
 }

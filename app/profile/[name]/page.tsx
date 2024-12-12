@@ -1,10 +1,11 @@
+import MyAppBar from '@/components/MyAppBar'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <MyAppBar />
+    </>
   )
 }
 
