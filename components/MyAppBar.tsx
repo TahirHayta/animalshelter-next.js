@@ -5,14 +5,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import AppBarButtons from './AppBarButtons';
 
+// appbar on the top of the page. always on top.
 const MyAppBar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
       <Toolbar>
+
         <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
         Adopt Animals
         </Typography>
+
         <AppBarButtons />
+
       </Toolbar>
     </AppBar>
   )
