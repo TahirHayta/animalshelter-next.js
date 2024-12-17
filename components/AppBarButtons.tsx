@@ -9,16 +9,17 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { useRouter } from 'next/navigation';
 
 const AppBarButtons = () => {
+    //TODO If logged in, these two must be change. you can add condition after using tRPC and routing.
     const [loggedIn, setLoggedIn] = React.useState(false)
     const [name,setName] = React.useState('')
 
-    const {push} = useRouter()
+    const {push} = useRouter() //TODO These will change as I will start using tRPC
     // If not logged in yet, login or signup page
     const openAccount = () => {
         push('/open-account') 
     }
     //to open profile page
-    const openprofile =(event: React.MouseEvent<HTMLButtonElement>) => {
+    const openprofile =() => {
         push(`/profile/${name}`)//instead of single quotes, use ``
     }
 

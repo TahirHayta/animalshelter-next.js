@@ -1,12 +1,12 @@
 import MyAppBar from '@/components/MyAppBar'
 import React from 'react'
 
-const homepage = () => {
+const Home = () => {
   return (
     <>
-      <MyAppBar />
+      
     </>
   )
 }
 
-export default homepage
+export default Home

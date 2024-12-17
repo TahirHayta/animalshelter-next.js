@@ -1,12 +1,12 @@
 import MyAppBar from '@/components/MyAppBar'
 import React from 'react'
 
-const page = () => {
+const profile = () => {
   return (
     <>
-      <MyAppBar />
+      
     </>
   )
 }
 
-export default page
+export default profile
