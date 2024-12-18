@@ -1,16 +1,16 @@
 import { AuthGuard } from '@/app/_MyPrivateFolders/AuthGuard'
 import React from 'react'
 
-const Animals = () => {
+const About = () => {
   return (
     <AuthGuard>
       <div>
         
-        <h1>Animals:</h1>
+        <h1>About:</h1>
         
       </div>
     </AuthGuard>
   )
 }
 
-export default Animals
+export default About

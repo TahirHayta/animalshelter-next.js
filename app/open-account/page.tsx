@@ -4,7 +4,7 @@ import React from 'react'
 const OpenAccount = () => {
   return (
     <>
-      
+      <h1>Open Account</h1>
     </>
   )
 }
