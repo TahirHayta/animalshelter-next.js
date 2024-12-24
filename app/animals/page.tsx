@@ -4,6 +4,7 @@ import React from 'react'
 const Animals = () => {
   return (
     <AuthGuard>
+      {/* TODO I can use <Suspense> here. */}
       <div>
         
         <h1>Animals:</h1>

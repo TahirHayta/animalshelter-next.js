@@ -1,13 +1,10 @@
-import { AppProps } from 'next/app';
-import MyAppBar from '../components/MyAppBar';
-import { CssBaseline } from '@mui/material';
+import Home from './home/page';
 
 
 
 export default function App() {
   
   return (
-  <>
-  </>
+  <Home/>
   );
 }

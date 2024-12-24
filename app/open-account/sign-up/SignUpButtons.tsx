@@ -9,7 +9,7 @@ const SignUpButtons = () => {
   };
 
     return (
-          <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          <Box component="form" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}> {/* This line can also be rendered on server. */}
             <TextField label="Full Name" type="text" fullWidth required />
             <TextField label="Email" type="email" fullWidth required />
             <TextField label="Password" type="password" fullWidth required />
