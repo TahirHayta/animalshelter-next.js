@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "release-it"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,6 +19,7 @@
     "@toolpad/core": "^0.10.0",
     "@trpc/client": "^10.45.2",
     "@trpc/server": "^10.45.2",
+    "husky": "^9.1.7",
     "next": "15.1.0",
     "prisma": "^6.0.1",
     "react": "^18.3.1",
@@ -28,13 +30,87 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@release-it/conventional-changelog": "^9.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "postcss": "^8",
+    "release-it": "^17.11.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "release-it": {
+    "git": {
+      "tagName": "v${version}",
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "perf",
+              "section": "Performance Improvements"
+            },
+            {
+              "type": "revert",
+              "section": "Reverts"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation"
+            },
+            {
+              "type": "style",
+              "section": "Styles"
+            },
+            {
+              "type": "refactor",
+              "section": "Code Refactoring"
+            },
+            {
+              "type": "test",
+              "section": "Tests"
+            },
+            {
+              "type": "build",
+              "section": "Build System"
+            },
+            {
+              "type": "ci",
+              "section": "Continuous Integration"
+            },
+            {
+              "type": "chore",
+              "section": "Chores"
+            }
+          ]
+        },
+        "infile": "CHANGELOG.md",
+        "writerOpts": {
+          "headerPartial": "## Release Notes\n\n"
+        }
+      }
+    }
   }
 }
